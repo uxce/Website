@@ -20,7 +20,7 @@
     return a;
   }
 
-  fetch('/photos.json')
+  fetch('photos.json')
     .then(r => r.json())
     .then(allPhotos => {
       const picks = shuffle(allPhotos).slice(0, 8);
