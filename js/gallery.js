@@ -28,7 +28,7 @@
   }
 
   /* ── BUILD WALL FROM photos.json ── */
-  fetch('/photos.json')
+  fetch('photos.json')
     .then(r => r.json())
     .then(photos => {
       photos.forEach(p => {
