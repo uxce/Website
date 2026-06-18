@@ -1,0 +1,83 @@
+/* ════════════════════════════════════════
+   base.css — reset, variables, animations
+════════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --amber:      #E8850A;
+  --amber2:     #F5A623;
+  --amber-dim:  #7A4400;
+  --amber-dark: #3D2000;
+  --border:     #1A0E00;
+  --white:      #F5EDD8;
+
+  /* keep old names mapped so nothing breaks */
+  --red:    #E8850A;
+  --red2:   #F5A623;
+  --orange: #C45E00;
+  --yellow: #E8850A;
+}
+
+body {
+  background: #060503;
+  color: var(--amber);
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* scanline overlay */
+body::after {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.13) 0,
+    rgba(0,0,0,0.13) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ── ANIMATIONS ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes marq {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* street light flicker — sodium lamp warming up */
+@keyframes flicker {
+  0%   { opacity: 1; }
+  3%   { opacity: 0.05; }
+  5%   { opacity: 0.9; }
+  7%   { opacity: 0.05; }
+  9%   { opacity: 1; }
+  60%  { opacity: 1; }
+  62%  { opacity: 0.4; }
+  63%  { opacity: 1; }
+  75%  { opacity: 1; }
+  76%  { opacity: 0.1; }
+  77%  { opacity: 0.9; }
+  78%  { opacity: 0.1; }
+  80%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%,100% { text-shadow: 0 0 18px rgba(245,166,35,0.15), 2px 2px 0 #3D2000; }
+  50%     { text-shadow: 0 0 32px rgba(245,166,35,0.28), 2px 2px 0 #3D2000; }
+}

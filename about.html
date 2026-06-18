@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UXCE // About</title>
+<meta name="description" content="About Alex H. — UCF IT student, developer, builder.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-trail-wrap"></div>
+
+<div class="top-banner">UCF INFORMATION TECHNOLOGY &mdash; FL &mdash; OPEN FOR WORK</div>
+<div class="stripe"></div>
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    ★ UCF INFORMATION TECHNOLOGY ★ DISCORD BOT DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★ FL ★ FULL STACK ★ UCF INFORMATION TECHNOLOGY ★ DISCORD BOT DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★ FL ★ FULL STACK ★&nbsp;
+  </div>
+</div>
+<div class="tape"></div>
+
+<div class="layout">
+  <nav class="leftnav">
+    <div class="nav-section">
+      <a href="home.html" class="nav-section-title">Top page</a>
+      <span class="nav-section-sub">トップページ</span>
+    </div>
+    <div class="nav-section">
+      <a href="about.html" class="nav-section-title active">About</a>
+      <span class="nav-section-sub">について</span>
+    </div>
+    <div class="nav-section">
+      <a href="projects.html" class="nav-section-title">Projects</a>
+      <span class="nav-section-sub">私の作品</span>
+    </div>
+    <div class="nav-section">
+      <a href="gallery.html" class="nav-section-title">Gallery</a>
+      <span class="nav-section-sub">写真と音楽</span>
+    </div>
+    <div class="widget">
+      <span class="widget-label">SITE VISITS</span>
+      <span class="counter-num" id="ctr">000000</span>
+    </div>
+    <div class="widget">
+      <span class="widget-label">STATUS</span>
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:#3D2000;line-height:2.4;letter-spacing:1px;">
+        <span class="online-dot"></span><span style="color:var(--amber);">ONLINE</span><br>
+        <span class="online-dot"></span><span style="color:var(--amber2);">OPEN TO HIRE</span>
+      </div>
+    </div>
+    <div class="widget" style="padding-bottom:8px;">
+      <span class="widget-label">FIND ME</span>
+    </div>
+    <div class="social-wrap">
+      <a href="https://github.com/uxce" target="_blank" rel="noopener" class="social-link">
+        <span class="social-icon si-gh">⬡</span>GITHUB
+      </a>
+    </div>
+    <div class="last-update">LAST UPDATE<br><span>JUN 2026</span></div>
+  </nav>
+
+  <main class="maincol">
+
+    <div class="sec-head-about">
+      <div style="display:flex;align-items:center;gap:12px;">
+       <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(16px,2.5vw,22px);color:var(--amber);letter-spacing:3px;text-shadow:0 0 14px rgba(232,133,10,.55);">About</span>
+      </div>
+      <div id="replayBtn" class="replay-btn">↺ REPLAY</div>
+    </div>
+
+    <!--
+      ══════════════════════════════════════
+      OUTER CONTAINER — holds both the
+      terminal and the dossier overlay.
+      Position:relative so the overlay can
+      be positioned absolute on top.
+      ══════════════════════════════════════
+    -->
+    <div class="fn-outer" id="fnOuter">
+
+      <!-- ── TAB BAR — always visible, controls which "tab" shows ── -->
+      <div class="fn-tab-bar" id="fnTabBar">
+        <div class="fn-tab active" id="tabTerminal" data-tab="terminal">
+          <span class="fn-tab-icon">⬡</span> fednet@secure
+        </div>
+        <div class="fn-tab inactive" id="tabDossier" data-tab="dossier">
+          <span class="fn-tab-icon" id="tabDossierDot">○</span> DOSSIER :: UCF-2027-AH
+        </div>
+        <div class="fn-tab-spacer"></div>
+        <div class="fn-tab-right"><span id="fnClock">--:--:--</span></div>
+      </div>
+
+      <!-- ── TERMINAL PANE ── -->
+      <div class="fn-pane" id="paneTerminal">
+        <!-- Chrome sub-bar -->
+        <div class="fn-topbar">
+          <div class="fn-topbar-left">
+            <span class="fn-dot red"></span>
+            <span class="fn-dot yellow"></span>
+            <span class="fn-dot green"></span>
+            &nbsp;fednet@secure — ssh 192.168.1.1
+          </div>
+        </div>
+        <!-- Output -->
+        <div class="fn-output" id="fnOutput"></div>
+        <!-- Prompt -->
+        <div class="fn-input-row" id="fnInputRow">
+          <span class="fn-prompt-label" id="fnPromptLabel">fednet@secure:~$&nbsp;</span>
+          <span class="fn-prompt-cursor" id="fnPromptCursor"></span>
+        </div>
+      </div>
+
+      <!-- ── DOSSIER PANE — hidden until animation finishes ── -->
+      <div class="fn-pane fn-pane-dossier hidden" id="paneDossier">
+
+        <!-- amber topbar -->
+        <div class="fn-pager-topbar">
+          <span class="fn-pager-topbar-title">FEDNET :: DOSSIER :: UCF-2027-AH :: ALEX H. (UXCE)</span>
+          <span class="fn-pager-topbar-right">CLASSIFICATION: OPEN</span>
+        </div>
+
+        <!-- Dossier body — expands naturally, page scrolls -->
+        <div class="fn-dossier-body" id="dossierBody">
+
+          <!-- ── IDENTIFICATION ── -->
+          <div class="dos-section">
+            <span class="dos-label">IDENTIFICATION — FILE #UCF-2027-AH</span>
+            <div class="dos-profile-row">
+              <div class="pg-photo">
+                <img src="pics/person.jpg" alt="SUBJECT"
+                     onerror="this.style.display='none';document.getElementById('pgPhotoFB').style.display='flex'">
+                <div class="pg-photo-fallback" id="pgPhotoFB" style="display:none;">
+                  <span>NO IMG</span><span>ON FILE</span>
+                </div>
+                <div class="pg-scan-line"></div>
+              </div>
+              <div class="dos-info">
+                <div class="dos-name">ALEX H.</div>
+                <div class="dos-aka">A.K.A. "UXCE"</div>
+                <div class="dos-badges">
+                  <span class="dos-badge active">● ACTIVE</span>
+                </div>
+                <div class="dos-fields">
+                  <div class="dos-field"><span class="dos-field-k">SCHOOL</span><span class="dos-field-v">UNIVERSITY OF CENTRAL FLORIDA</span></div>
+                  <div class="dos-field"><span class="dos-field-k">MAJOR</span><span class="dos-field-v">INFORMATION TECHNOLOGY</span></div>
+                  <div class="dos-field"><span class="dos-field-k">CLASS</span><span class="dos-field-v">2027</span></div>
+                  <div class="dos-field"><span class="dos-field-k">LOCATION</span><span class="dos-field-v">ORLANDO, FL</span></div>
+                  <div class="dos-field"><span class="dos-field-k">FOCUS</span><span class="dos-field-v">CYBERSECURITY / IT</span></div>
+                  <div class="dos-field"><span class="dos-field-k">CONTACT</span><span class="dos-field-v">alexhila@proton.me</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── BIOGRAPHY ── -->
+          <div class="dos-section">
+            <span class="dos-label">BIOGRAPHY</span>
+            <div class="dos-bio">
+              <span class="hi">Hey, I'm Alex.</span> I'm a 20-year-old IT student at the <span class="hi">University of Central Florida</span> with an interest in cybersecurity.
+               I got into technology simply because I grew up around computers and always wanted to know how they worked.
+               Whether it was building PCs, fixing random issues, or taking things apart just to understand them, I've always enjoyed learning how systems work behind the scenes.
+  
+            </div>
+            <div class="dos-bio">
+              In 2025, I competed in <span class="hi">Horse Plinko</span> which is a blue team cybersecurity competition hosted by HackUCF. 
+              It gave me the opportunity to apply what I've learned in a fast-paced environment while working alongside other students who share the same interests. My team placed
+              <span class="hi">4th overall</span>.
+            </div>
+            <div class="dos-bio">
+             When I'm not working on technology, I'm usually working on cars. My biggest project right now is my <span class="hi">1995 Nissan 240SX (s14)</span> 
+             The gallery on this site documents some of that journey, from maintenance and repairs to the long-term plans I have for the car.
+              
+            </div>
+            <div class="dos-bio">
+            The retro amber color scheme used throughout this website is inspired by 1990s dashboard lighting and instrument clusters. 
+            It's a small detail, but one that reflects both my interest in older Japanese cars and my appreciation for thoughtful design.
+            </div>
+          </div>
+
+          <!-- ── TECHNICAL PROFILE ── -->
+          <div class="dos-section">
+            <span class="dos-label">TECHNICAL</span>
+            <div class="dos-tech-grid">
+              <div class="dos-tech-col">
+                <div class="dos-tech-heading">LANGUAGES</div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Python</span>
+                  <span class="dos-tech-v">Primary language. Used for scripting, automation, Discord bots, and CTF tooling. Comfortable with async, dataclasses, and stdlib internals.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">JavaScript</span>
+                  <span class="dos-tech-v">Frontend and Node.js. Built full-stack projects; familiar with fetch/async patterns, DOM manipulation, and event-driven architecture.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">HTML / CSS</span>
+                  <span class="dos-tech-v">This entire site. Custom layouts, animations, CRT effects — no frameworks, hand-coded.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">SQL</span>
+                  <span class="dos-tech-v">Queries, joins, basic schema design. Used in coursework and personal projects.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Bash / Shell</span>
+                  <span class="dos-tech-v">Daily driver on Linux. Scripting, automation, piping, cron jobs, and recon workflows.</span>
+                </div>
+              </div>
+              <div class="dos-tech-col">
+                <div class="dos-tech-heading">SYSTEMS & TOOLS</div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Linux / CLI</span>
+                  <span class="dos-tech-v">Primary environment. Comfortable with Debian/Arch, file permissions, process management, and service configuration.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Networking</span>
+                  <span class="dos-tech-v">TCP/IP fundamentals, subnetting, DNS, routing. Hands-on with home lab setup and packet analysis.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Wireshark</span>
+                  <span class="dos-tech-v">Packet capture and protocol analysis. Used in both coursework and CTF forensics challenges.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Git</span>
+                  <span class="dos-tech-v">Version control, branching, rebasing, GitHub workflows. All projects version-controlled from day one.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Docker</span>
+                  <span class="dos-tech-v">Containerization basics. Used for isolated CTF environments and local dev setups.</span>
+                </div>
+              </div>
+              <div class="dos-tech-col">
+                <div class="dos-tech-heading">SECURITY</div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">CTF / PWN</span>
+                  <span class="dos-tech-v">Competed in HackUCF Horse Plinko '25 — 4th place. Categories: pwn, rev, web, crypto, forensics.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Recon / OSINT</span>
+                  <span class="dos-tech-v">Nmap, gobuster, passive recon. Enumeration methodology for CTF and coursework labs.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Web Exploitation</span>
+                  <span class="dos-tech-v">SQLi, XSS, IDOR, path traversal. Applied in CTF web categories and lab environments.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Forensics</span>
+                  <span class="dos-tech-v">File carving, steganography, memory dumps, metadata analysis. Ongoing interest area.</span>
+                </div>
+                <div class="dos-tech-entry">
+                  <span class="dos-tech-k">Cryptography</span>
+                  <span class="dos-tech-v">Classical ciphers, RSA fundamentals, hash analysis. CTF crypto category experience.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── KNOWN ACTIVITIES ── -->
+          <div class="dos-section">
+            <span class="dos-label">KNOWN ACTIVITIES & INTERESTS</span>
+            <div class="dos-tags">
+              <span class="dos-tag">CARS</span>
+              <span class="dos-tag">FOOD</span>
+              <span class="dos-tag">TRAVELING</span>
+              <span class="dos-tag">HARBOR FREIGHT</span>
+              <span class="dos-tag">COMPUTERS</span>
+
+            </div>
+          </div>
+
+          <!-- bottom bar -->
+          <div class="fn-pager-botbar">
+            <span class="fn-pager-botbar-left">:  (END)  —  switch tabs above</span>
+            <span class="fn-pager-botbar-right">fednet-dossier v2.4  ·  file #UCF-2027-AH</span>
+          </div>
+
+        </div><!-- /fn-dossier-body -->
+      </div><!-- /paneDossier -->
+
+    </div><!-- /fn-outer -->
+
+  </main>
+</div>
+
+<div class="tape"></div>
+<div class="foot">
+  © 2026 UXCE · UCF INFORMATION TECHNOLOGY · FL · <span>NO TRACKING · NO ADS</span>
+</div>
+
+<script src="js/cursor.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/nav-music.js"></script>
+
+<script>
+(function () {
+
+  const output      = document.getElementById('fnOutput');
+  const promptLbl   = document.getElementById('fnPromptLabel');
+  const promptCur   = document.getElementById('fnPromptCursor');
+  const inputRow    = document.getElementById('fnInputRow');
+  const replayBtn   = document.getElementById('replayBtn');
+
+  const tabTerminal = document.getElementById('tabTerminal');
+  const tabDossier  = document.getElementById('tabDossier');
+  const tabDotEl    = document.getElementById('tabDossierDot');
+  const paneTerminal = document.getElementById('paneTerminal');
+  const paneDossier  = document.getElementById('paneDossier');
+
+  const SESSION_KEY = 'about_anim_v2';
+
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+
+  /* ── Scrolls terminal output to bottom ── */
+  function scrollBottom() { output.scrollTop = output.scrollHeight; }
+
+  function addLine(text, cls = '') {
+    const div = document.createElement('div');
+    div.className = 'fn-line ' + cls;
+    div.textContent = text;
+    output.appendChild(div);
+    scrollBottom();
+    return div;
+  }
+  function addBlank() { addLine('', 'blank'); }
+
+  async function typeCommand(cmd, prompt = 'fednet@secure:~$') {
+    promptLbl.textContent = prompt + ' ';
+    promptCur.style.display = 'inline-block';
+    let typed = '';
+    for (const ch of cmd) {
+      typed += ch;
+      promptLbl.textContent = prompt + ' ' + typed;
+      await wait(50 + Math.random() * 30);
+    }
+    await wait(200);
+    addLine(prompt + ' ' + cmd, 'cmd');
+    promptLbl.textContent = prompt + ' ';
+    promptCur.style.display = 'none';
+    scrollBottom();
+  }
+
+  /* ── Clock ── */
+  function startClock() {
+    const tick = () => {
+      const n = new Date();
+      const t = String(n.getHours()).padStart(2,'0') + ':' +
+                String(n.getMinutes()).padStart(2,'0') + ':' +
+                String(n.getSeconds()).padStart(2,'0');
+      document.getElementById('fnClock').textContent = t;
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  /* ── Tab switching ── */
+  function switchTab(which) {
+    if (which === 'dossier') {
+      tabTerminal.classList.remove('active'); tabTerminal.classList.add('inactive');
+      tabDossier.classList.remove('inactive'); tabDossier.classList.add('active');
+      paneTerminal.classList.add('hidden');
+      paneDossier.classList.remove('hidden');
+    } else {
+      tabDossier.classList.remove('active'); tabDossier.classList.add('inactive');
+      tabTerminal.classList.remove('inactive'); tabTerminal.classList.add('active');
+      paneDossier.classList.add('hidden');
+      paneTerminal.classList.remove('hidden');
+    }
+  }
+
+  tabTerminal.addEventListener('click', () => switchTab('terminal'));
+  tabDossier.addEventListener('click',  () => {
+    if (!paneDossier.classList.contains('fn-pane-locked')) switchTab('dossier');
+  });
+
+  /* ── Open dossier after animation ── */
+  function openDossier() {
+    inputRow.style.display = 'none';
+    // Unlock the dossier tab + mark it live
+    paneDossier.classList.remove('fn-pane-locked');
+    tabDotEl.textContent = '●';
+    tabDotEl.classList.add('blink-dot');
+    tabDossier.classList.remove('fn-tab-disabled');
+    // Switch to dossier tab
+    switchTab('dossier');
+    replayBtn.classList.add('visible');
+    sessionStorage.setItem(SESSION_KEY, '1');
+  }
+
+  /* ── Reset for replay ── */
+  function reset() {
+    output.innerHTML = '';
+    promptLbl.textContent = 'fednet@secure:~$ ';
+    promptCur.style.display = 'none';
+    inputRow.style.display = 'flex';
+    replayBtn.classList.remove('visible');
+    // Lock dossier tab again
+    paneDossier.classList.add('fn-pane-locked');
+    tabDotEl.textContent = '○';
+    tabDotEl.classList.remove('blink-dot');
+    tabDossier.classList.add('fn-tab-disabled');
+    // Switch back to terminal
+    switchTab('terminal');
+  }
+
+  /* ════════ PHASES ════════ */
+
+  async function phaseConnect() {
+    await typeCommand('ssh admin@fednet.secure -p 22');
+    await wait(100);
+    addLine('Connecting to fednet.secure (192.168.1.1)...', 'info');
+    addBlank();
+    const handshake = [
+      ['  OpenSSH_9.6p1, OpenSSL 3.2.0', 'dim'],
+      ['  debug: SSH2_MSG_KEXINIT sent', 'dim'],
+      ['  debug: SSH2_MSG_KEXINIT received', 'dim'],
+      ['  debug: kex: algorithm: curve25519-sha256', 'dim'],
+      ['  debug: SSH2_MSG_KEX_ECDH_INIT sent', 'dim'],
+      ['  debug: SSH2_MSG_NEWKEYS sent / received', 'dim'],
+    ];
+    for (const [t, c] of handshake) { addLine(t, c); await wait(42); }
+    await wait(150);
+    addLine('  Host key: SHA256:xK9mNpQr7wZvLsYtUjBhCdEfGiHjKlMn', 'dim');
+    await wait(90);
+    addLine('  Connection established.', 'green');
+    addBlank();
+  }
+
+  async function phaseLogin() {
+    promptLbl.textContent = 'Password: ';
+    promptCur.style.display = 'inline-block';
+    await wait(450);
+    const pw = '••••••••••';
+    let typed = '';
+    for (const ch of pw) {
+      typed += ch;
+      promptLbl.textContent = 'Password: ' + typed;
+      await wait(85 + Math.random() * 40);
+    }
+    await wait(360);
+    addLine('Password: ••••••••••', 'cmd');
+    promptCur.style.display = 'none';
+    promptLbl.textContent = 'fednet@secure:~$ ';
+    await wait(260);
+    addLine('Authenticating...', 'info');
+    await wait(640);
+    addBlank();
+    addLine('  ██████╗███████╗██████╗ ███╗   ██╗███████╗████████╗', 'header');
+    addLine('  ██╔═══╝██╔════╝██╔══██╗████╗  ██║██╔════╝╚══██╔══╝', 'header');
+    addLine('  █████║ █████╗  ██║  ██║██╔██╗ ██║█████╗     ██║   ', 'header');
+    addLine('  ██╔══╝ ██╔══╝  ██║  ██║██║╚██╗██║██╔══╝     ██║   ', 'header');
+    addLine('  ██║    ███████╗██████╔╝██║ ╚████║███████╗   ██║   ', 'header');
+    addLine('  ╚═╝    ╚══════╝╚═════╝ ╚═╝  ╚═══╝╚══════╝   ╚═╝   ', 'header');
+    addBlank();
+    addLine('  FedNet Secure v2.4.1i  —  Federal Bureau of Intervention', 'info');
+    addLine('  UNAUTHORIZED ACCESS PROSECUTED UNDER 18 U.S.C. § 1030', 'dim');
+    addBlank();
+    addLine('  Last login: Mon Jun 16 23:41:07 2026 from 10.0.0.42', 'dim');
+    addLine('  Welcome back, Com_5_UXCE', 'green');
+    addBlank();
+  }
+
+  async function phaseSearch() {
+    await typeCommand('fednet-query --db subjects --search "ALEX H"');
+    await wait(100);
+    addLine('Querying SUBJECTS database...', 'info');
+    await wait(180);
+    const rows = [
+      { name: 'ALEXOPOULOS, DEMETRI T.',  id: '#UCF-2025-DD', match: false },
+      { name: 'HARRIS, ALEX W.',           id: '#UCF-2024-AW', match: false },
+      { name: 'ALVAREZ, HENRY J.',          id: '#UCF-2027-AJ', match: false },
+      { name: 'ALEXANDER, MARK B.',         id: '#UCF-2026-MB', match: false },
+      { name: 'H., ALEX — ALIAS: UXCE',    id: '#UCF-2027-AH', match: true  },
+    ];
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      const pct = Math.round((i + 1) / rows.length * 100);
+      if (row.match) {
+        addLine(`  [${pct}%]  ██ MATCH ██  ${row.name}  ${row.id}`, 'amber');
+        await wait(340);
+      } else {
+        addLine(`  [${pct}%]  --  ${row.name.padEnd(30,' ')}  ${row.id}`, 'dim');
+        await wait(80);
+      }
+    }
+    await wait(260);
+    addBlank();
+    addLine('  1 record matched.', 'green');
+    await wait(240);
+  }
+
+  async function phasePager() {
+    await typeCommand('fednet-view --dossier #UCF-2027-AH --render');
+    await wait(160);
+    addLine('  Loading dossier...', 'info');
+    await wait(200);
+    addLine('  Decrypting file #UCF-2027-AH...', 'dim');
+    await wait(400);
+    addLine('  Opening in viewer...', 'info');
+    await wait(350);
+    openDossier();
+  }
+
+  async function run() {
+    startClock();
+    reset();
+    await wait(300);
+    await phaseConnect();
+    await phaseLogin();
+    await phaseSearch();
+    await phasePager();
+  }
+
+  /* ── Play once per session ── */
+  if (sessionStorage.getItem(SESSION_KEY)) {
+    startClock();
+    openDossier(); // already seen this session — skip straight to dossier
+  } else {
+    // Lock dossier tab until animation finishes
+    paneDossier.classList.add('fn-pane-locked');
+    tabDossier.classList.add('fn-tab-disabled');
+    run();
+  }
+
+  replayBtn.addEventListener('click', () => {
+    sessionStorage.removeItem(SESSION_KEY);
+    run();
+  });
+
+})();
+</script>
+
+</body>
+</html>

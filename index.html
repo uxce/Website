@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UXCE</title>
+<link rel="icon" href="assets/images/favicon.ico">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: #060503;
+    overflow: hidden;
+  }
+
+  /* The iframe fills the entire viewport */
+  #pageFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<!-- Hidden persistent audio — never destroyed on navigation -->
+<audio id="shellAudio" preload="auto"></audio>
+
+<!-- The entire visible site lives inside this iframe -->
+<iframe id="pageFrame" src="home.html" title="UXCE"></iframe>
+
+<script>
+(function () {
+  const audio = document.getElementById('shellAudio');
+  const frame = document.getElementById('pageFrame');
+
+  /* ── PLAYLIST (mirrors player.js) ── */
+  const playlist = [
+    { title: 'Cartz',    artist: 'gum.mp3',     src: 'https://pub-f3421bbecaba465e83e033376eb8cdb2.r2.dev/music/cartz.mp3',    duration: '2:50' },
+    { title: 'Till Dawn', artist: 'Janaway',     src: 'https://pub-f3421bbecaba465e83e033376eb8cdb2.r2.dev/music/TillDawn.mp3', duration: '5:22' },
+    { title: 'I Could Take U There', artist: 'DazeGxd',  src: 'https://pub-f3421bbecaba465e83e033376eb8cdb2.r2.dev/music/iCouldTakeUthere.mp3',  duration: '3:21' },
+    { title: 'Get Lit',  artist: 'ANDRS', src: 'https://pub-f3421bbecaba465e83e033376eb8cdb2.r2.dev/music/getLit.mp3',  duration: '2:23' },
+
+  ];
+
+  let curIdx  = 0;
+  let looping = false;
+  let playing = false;
+
+  /* ── LOAD + PLAY ── */
+  function loadTrack(idx, autoplay) {
+    curIdx = ((idx % playlist.length) + playlist.length) % playlist.length;
+    const t = playlist[curIdx];
+    audio.src = t.src;
+    if (autoplay) {
+      audio.play().catch(() => {});
+      playing = true;
+    }
+    broadcastState();
+  }
+
+  audio.addEventListener('ended', () => {
+    if (looping) audio.play();
+    else loadTrack(curIdx + 1, true);
+  });
+
+  audio.addEventListener('timeupdate', broadcastState);
+
+  /* ── BROADCAST STATE TO IFRAME ── */
+  function broadcastState() {
+    if (!frame.contentWindow) return;
+    const t = playlist[curIdx];
+    frame.contentWindow.postMessage({
+      type: 'MP_STATE',
+      playing: !audio.paused,
+      muted:   audio.muted,
+      volume:  audio.volume,
+      current: audio.currentTime,
+      duration: audio.duration || 0,
+      title:   t?.title  || '',
+      artist:  t?.artist || '',
+      idx:     curIdx,
+      total:   playlist.length,
+    }, '*');
+  }
+
+  /* ── HANDLE COMMANDS FROM IFRAME ── */
+  window.addEventListener('message', e => {
+    const d = e.data;
+    if (!d || !d.type) return;
+
+    switch (d.type) {
+      case 'MP_PLAY':
+        if (!audio.src) loadTrack(0, true);
+        else { audio.play().catch(() => {}); playing = true; }
+        broadcastState();
+        break;
+      case 'MP_PAUSE':
+        audio.pause();
+        playing = false;
+        broadcastState();
+        break;
+      case 'MP_PREV':
+        loadTrack(curIdx - 1, !audio.paused);
+        break;
+      case 'MP_NEXT':
+        loadTrack(curIdx + 1, !audio.paused);
+        break;
+      case 'MP_TRACK':
+        loadTrack(d.idx, true);
+        break;
+      case 'MP_MUTE':
+        audio.muted = d.muted;
+        broadcastState();
+        break;
+      case 'MP_VOLUME':
+        audio.volume = d.volume;
+        broadcastState();
+        break;
+      case 'MP_SEEK':
+        if (audio.duration) {
+          audio.currentTime = d.isFraction ? d.time * audio.duration : d.time;
+        }
+        broadcastState();
+        break;
+      case 'MP_LOOP':
+        looping = d.loop;
+        broadcastState();
+        break;
+      case 'MP_NAVIGATE':
+        // Iframe page asking to change pages
+        frame.src = d.href;
+        break;
+      case 'MP_READY':
+        // New page loaded, send state immediately
+        broadcastState();
+        break;
+    }
+  });
+
+  /* ── Start muted, play on first click ── */
+  audio.volume = 0.1;
+  loadTrack(0, true);
+
+   /*
+   window.addEventListener('message', e => {
+    if (e.data?.type === 'MP_FIRST_CLICK' && audio.paused) {
+      audio.play().catch(() => {});
+      playing = true;
+      broadcastState();
+    }
+  }, { once: true }); 
+  
+  */
+
+})();
+</script>
+</body>
+</html>

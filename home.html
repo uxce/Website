@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ── SEO ── -->
+<title>Welcome</title>
+<meta name="description" content="UCF Information Technology student — developer, builder, CTF competitor. Open for internships.">
+<meta name="author" content="UXCE">
+
+<!-- ── Open Graph (Discord / LinkedIn previews) ── -->
+<meta property="og:title" content="UXCE // Portfolio">
+<meta property="og:description" content="UCF IT student · Discord bots · CTF · open to hire">
+<meta property="og:image" content="assets/images/og-preview.png">
+<meta property="og:url" content="https://yourusername.github.io">
+<meta property="og:type" content="website">
+
+<!-- ── Fonts ── -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ── Styles ── -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+
+<!-- ── Favicon ── -->
+<link rel="icon" href="assets/images/favicon.ico">
+</head>
+
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-trail-wrap"></div>
+
+<!-- TOP BAR -->
+<div class="top-banner">
+  Created by &mdash; uxce
+</div>
+
+
+<div class="stripe"></div>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    ★ UCF INFORMATION TECHNOLOGY ★ ROOKIE DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★  FL ★ LEARNING ★ UCF INFORMATION TECHNOLOGY ★ ROOKIE DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★  FL ★ LEARNING ★&nbsp;
+  </div>
+</div>
+
+<div class="tape"></div>
+
+<div class="layout">
+
+  <!-- LEFT NAV -->
+  <nav class="leftnav">
+    <div class="nav-section">
+      <a href="home.html" class="nav-section-title active" data-section="top">Top page</a>
+      <span class="nav-section-sub">トップページ</span>
+    </div>
+    <div class="nav-section">
+      <a href="about.html" class="nav-section-title" data-section="about">About</a>
+      <span class="nav-section-sub">について</span>
+    </div>
+    <div class="nav-section">
+      <a href="projects.html" class="nav-section-title" data-section="projects">Projects</a>
+      <span class="nav-section-sub">私の作品</span>
+    </div>
+    <div class="nav-section">
+      <a href="gallery.html" class="nav-section-title" data-section="gallery">Gallery</a>
+      <span class="nav-section-sub">写真と音楽</span>
+    </div>
+
+    <!-- VISIT COUNTER -->
+    <div class="widget">
+      <span class="widget-label">SITE VISITS</span>
+      <span class="counter-num" id="ctr">000000</span>
+    </div>
+
+    <!-- STATUS -->
+    <div class="widget">
+      <span class="widget-label">STATUS</span>
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:#3D2000;line-height:2.4;letter-spacing:1px;">
+        <span class="online-dot"></span><span style="color:var(--amber);">ONLINE</span><br>
+        <span class="online-dot"></span><span style="color:var(--amber2);">OPEN TO HIRE</span>
+      </div>
+    </div>
+
+    <!-- SOCIAL LINKS -->
+    <div class="widget" style="padding-bottom:8px;">
+      <span class="widget-label">FIND ME</span>
+    </div>
+    <div class="social-wrap">
+      <a href="https://github.com/uxce" target="_blank" rel="noopener" class="social-link">
+        <span class="social-icon si-gh">⬡</span>GITHUB
+      </a>
+      </div>
+
+    <!-- LAST UPDATE -->
+    <div class="last-update">
+      LAST UPDATE<br><span id="lastUpdate">JUN 2026</span>
+    </div>
+
+  </nav>
+
+  <!-- MAIN -->
+  <main class="maincol" id="top">
+
+    <!-- HERO -->
+    <div class="hero-photo">
+      <div class="hero-name-block">
+        <span class="hero-year">// UCF · INFORMATION TECHNOLOGY · CLASS OF 2027</span>
+        <div class="hero-name">ALEX<span class="blink" style="color:#E8850A;">_</span></div>
+        <span class="hero-tagline">STUDENT · BUILDER · BREAKER OF THINGS</span>
+        <span class="hero-tagline-jp">学生・ビルダー・ものを壊す者</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="sec-head" id="about"><span class="sec-head-en">About</span></div>
+    <div class="panel">
+      <div class="about-body">
+        Hello I'm an IT student at the <span class="r">University of Central Florida</span>. Welcome to my portfolio, here you'll see my various projects, skills, and photos from my life.
+        Visit the About page to learn more about me and my skillset.
+      </div>
+      <div class="about-body">
+        <span class="r">Competitions I've placed</span><br>
+        <a href="https://plinko.horse/" target="_blank" rel="noopener noreferrer" class="y"> Horse Plinko</a> — '25 (4th Place)
+      </div>
+      <div class="about-body" style="color:#2a2a2a;font-size:15px;letter-spacing:2px;">
+        &lt;----&gt;
+      </div>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-v">UCF</span><span class="stat-k">SCHOOL</span></div>
+        <div class="stat"><span class="stat-v">IT</span><span class="stat-k">MAJOR</span></div>
+        <div class="stat"><span class="stat-v">'27</span><span class="stat-k">GRAD YEAR</span></div>
+        <div class="stat"><span class="stat-v" style="color:var(--amber2);animation:blink 1s step-end infinite;">OPEN</span><span class="stat-k">FOR HIRE</span></div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="sec-head" id="projects"><span class="sec-head-en">Projects</span></div>
+    <div class="panel" style="padding:2px;">
+      <div class="photo-grid">
+        <a href="projects.html#proj-001" class="photo-cell pc1" data-code="import discord async def delete() for msg in channel.history() await msg.delete()">
+          <div class="photo-overlay"><div class="po-title">DISCORD<br>MSG DELETER</div><div class="po-tag">PYTHON · DISCORD.PY</div></div>
+          <div class="photo-label"><span class="pl-num"></span><span class="pl-name">DISCORD MESSAGE DELETER</span></div>
+        </a>
+        <a href="projects.html#proj-002" class="photo-cell pc2" data-code="git clone hackucf CTF pwn rev web crypto forensics team submit flag">
+          <div class="photo-overlay"><div class="po-title">HACK UCF<br>HORSE PLINKO</div><div class="po-tag">TEAM EVENT · BLUE TEAM</div></div>
+          <div class="photo-label"><span class="pl-num">  </span><span class="pl-name">HACK UCF</span></div>
+        </a>
+        <a href="projects.html#proj-003" class="photo-cell pc3" data-code="coming soon in development building...">
+          <div class="photo-overlay"><div class="po-title">COMING<br>SOON</div><div class="po-tag">IN DEVELOPMENT</div></div>
+          <div class="photo-label"><span class="pl-num">  </span><span class="pl-name">In Progress</span></div>
+        </a>
+        <a href="projects.html#proj-004" class="photo-cell pc4" data-code="SELECT * FROM projects WHERE shipped = true ORDER BY date DESC">
+          <div class="photo-overlay"><div class="po-title">COMING<br>SOON</div><div class="po-tag">IN DEVELOPMENT</div></div>
+          <div class="photo-label"><span class="pl-num">  </span><span class="pl-name">In Progress</span></div>
+        </a>
+        <a href="projects.html#proj-005" class="photo-cell pc5" data-code="nmap -sV -O target ssh brute force recon enumeration">
+          <div class="photo-overlay"><div class="po-title">COMING<br>SOON</div><div class="po-tag">IN DEVELOPMENT</div></div>
+          <div class="photo-label"><span class="pl-num">  </span><span class="pl-name">In Progress</span></div>
+        </a>
+        <a href="projects.html#proj-006" class="photo-cell pc6" data-code="npm run build webpack bundle deploy vercel prod ready">
+          <div class="photo-overlay"><div class="po-title">COMING<br>SOON</div><div class="po-tag">IN DEVELOPMENT</div></div>
+          <div class="photo-label"><span class="pl-num">  </span><span class="pl-name">In Progress</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="sec-head" id="skills"><span class="sec-head-en">Skills</span></div>
+    <div class="panel skills-panel">
+      <div class="skills-cols">
+        <div class="skills-col">
+          <div class="skill-cat-label">// LANGUAGES</div>
+          <table class="skill-table">
+            <tr><td><span class="sk-name">PYTHON</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:85%"></div></div></td><td><span class="sk-pct">85%</span></td></tr>
+            <tr><td><span class="sk-name">JAVASCRIPT</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:75%"></div></div></td><td><span class="sk-pct">75%</span></td></tr>
+            <tr><td><span class="sk-name">HTML / CSS</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:80%"></div></div></td><td><span class="sk-pct">80%</span></td></tr>
+            <tr><td><span class="sk-name">SQL</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:65%"></div></div></td><td><span class="sk-pct">65%</span></td></tr>
+            <tr><td><span class="sk-name">BASH</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:72%"></div></div></td><td><span class="sk-pct">72%</span></td></tr>
+          </table>
+        </div>
+        <div class="skills-col">
+          <div class="skill-cat-label">// SYSTEMS &amp; TOOLS</div>
+          <table class="skill-table">
+            <tr><td><span class="sk-name">LINUX / CLI</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:80%"></div></div></td><td><span class="sk-pct">80%</span></td></tr>
+            <tr><td><span class="sk-name">NETWORKING</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:70%"></div></div></td><td><span class="sk-pct">70%</span></td></tr>
+            <tr><td><span class="sk-name">GIT</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:78%"></div></div></td><td><span class="sk-pct">78%</span></td></tr>
+            <tr><td><span class="sk-name">DOCKER</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:60%"></div></div></td><td><span class="sk-pct">60%</span></td></tr>
+            <tr><td><span class="sk-name">WIRESHARK</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:68%"></div></div></td><td><span class="sk-pct">68%</span></td></tr>
+          </table>
+        </div>
+        <div class="skills-col">
+          <div class="skill-cat-label">// SECURITY</div>
+          <table class="skill-table">
+            <tr><td><span class="sk-name">CTF / PWN</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:70%"></div></div></td><td><span class="sk-pct">70%</span></td></tr>
+            <tr><td><span class="sk-name">RECON</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:75%"></div></div></td><td><span class="sk-pct">75%</span></td></tr>
+            <tr><td><span class="sk-name">WEB EXPLOIT</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:62%"></div></div></td><td><span class="sk-pct">62%</span></td></tr>
+            <tr><td><span class="sk-name">FORENSICS</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:58%"></div></div></td><td><span class="sk-pct">58%</span></td></tr>
+            <tr><td><span class="sk-name">CRYPTOGRAPHY</span></td><td><div class="sk-bar-wrap"><div class="sk-bar" style="width:55%"></div></div></td><td><span class="sk-pct">55%</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALLERY + MUSIC PLAYER -->
+    <div class="sec-head" id="gallery"><span class="sec-head-en">Gallery &amp; Tunes</span></div>
+    <div class="bottom-row">
+
+      <!-- IMAGE SLIDER -->
+      <div class="img-slider" id="imgSlider">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide"><div class="slide-placeholder">[ IMAGE 01 ]<br>add img src here</div></div>
+          <div class="slide"><div class="slide-placeholder">[ IMAGE 02 ]<br>add img src here</div></div>
+          <div class="slide"><div class="slide-placeholder">[ IMAGE 03 ]<br>add img src here</div></div>
+          <div class="slide"><div class="slide-placeholder">[ IMAGE 04 ]<br>add img src here</div></div>
+        </div>
+        <div class="slider-prev" id="sliderPrev">◀</div>
+        <div class="slider-next" id="sliderNext">▶</div>
+        <div class="slider-dots" id="sliderDots"></div>
+        <div class="slider-label" id="sliderLabel">PHOTO 1 / 4</div>
+      </div>
+
+      <!-- MUSIC PLAYER -->
+      <div class="music-player">
+        <div class="mp-header">
+          <div class="mp-header-left">
+            <div class="now-playing-dot paused" id="npDot"></div>
+            <span class="mp-label">NOW PLAYING</span>
+          </div>
+          <span class="mp-label" style="color:#330000;">// PLAYER</span>
+        </div>
+        <div class="mp-track-info">
+          <div class="mp-track-title" id="trackTitle">SELECT A TRACK</div>
+          <div class="mp-track-artist" id="trackArtist">— — —</div>
+        </div>
+        <div class="visualizer" id="visualizer"></div>
+        <div class="mp-progress-wrap">
+          <div class="mp-progress-track" id="progressTrack">
+            <div class="mp-progress-fill" id="progressFill"></div>
+          </div>
+          <div class="mp-time-row">
+            <span id="timeElapsed">0:00</span>
+            <span id="timeDuration">0:00</span>
+          </div>
+        </div>
+        <div class="mp-controls">
+          <button class="mp-btn" id="btnPrev">⏮</button>
+          <button class="mp-btn mp-btn-play" id="btnPlay">▶</button>
+          <button class="mp-btn" id="btnNext">⏭</button>
+          <button class="mp-btn mp-btn-loop" id="btnLoop">↺ LOOP</button>
+          <div class="mp-vol">
+            <span class="mp-vol-label">VOL</span>
+            <input type="range" id="volSlider" min="0" max="1" step="0.05" value="0.1">
+          </div>
+        </div>
+        <div class="mp-tracklist" id="trackList"></div>
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+    <div class="sec-head" id="contact"><span class="sec-head-en">Contact</span></div>
+    <div class="contact-panel">
+      <div class="contact-head">LET'S <span>TALK</span><br>OR HIRE ME</div>
+      <div>
+        <a href="mailto:alexhila@proton.me" class="cbtn cbtn-r">✉ EMAIL</a>
+        <a href="https://github.com/uxce" target="_blank" rel="noopener" class="cbtn cbtn-g">⬡ GITHUB</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="tape"></div>
+<div class="foot">
+  © 2026 UXCE · UCF INFORMATION TECHNOLOGY ·  FL · <span>NO TRACKING · NO ADS</span>
+</div>
+
+<!-- Scripts -->
+<script src="js/cursor.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/player.js"></script>
+<script src="js/nav.js"></script>
+
+
+<script src="js/nav-music.js"></script>
+
+<script>
+(function () {
+  const el = document.querySelector('.hero-name');
+  const text = 'Hello, Im Alex';
+  const cursor = el.querySelector('.blink');
+  el.childNodes[0].textContent = '';
+
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      el.childNodes[0].textContent += text[i];
+      i++;
+      setTimeout(type, 120 + Math.random() * 80);
+    }
+  }
+
+  // Small delay before starting
+  setTimeout(type, 600);
+})();
+</script>
+
+</body>
+</html>

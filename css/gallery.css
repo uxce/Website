@@ -1,0 +1,150 @@
+/* ════════════════════════════════════════
+   gallery.css — photo grid gallery
+════════════════════════════════════════ */
+
+/* ── PAGE HEADER ── */.gallery-header-count {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 2px;
+  margin-left: auto;
+}
+
+/* ── PHOTO GRID ── */
+.photo-wall {
+  padding: 2px;
+  background: #111;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.pw-item {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+
+  aspect-ratio: 4 / 3;
+}
+
+.pw-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1),
+              filter 0.3s;
+  filter: brightness(0.88) contrast(1.05);
+}
+
+.pw-item:hover img {
+  transform: scale(1.04);
+  filter: brightness(1) contrast(1.08);
+}
+
+.pw-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 40%,
+    rgba(0,0,0,0.88) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.pw-item:hover .pw-overlay {
+  opacity: 1;
+}
+
+.pw-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  color: #ccc;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+.pw-tag {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: var(--red);
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9900;
+  background: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid #1a1a1a;
+  display: block;
+}
+
+.lb-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: #555;
+  cursor: none;
+  padding: 8px 12px;
+  border: 1px solid #222;
+  transition: color 0.1s, border-color 0.1s;
+  background: #000;
+}
+
+.lb-close:hover {
+  color: #cc1100;
+  border-color: #440000;
+}
+
+.lb-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  color: #555;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .photo-wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-wall {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UXCE // Gallery</title>
+<meta name="description" content="Gallery — Alex H.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-trail-wrap"></div>
+
+<!-- TOP BAR -->
+<div class="top-banner">
+  UCF INFORMATION TECHNOLOGY &mdash;  FL &mdash; OPEN FOR WORK
+</div>
+
+<div class="stripe"></div>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    ★ UCF INFORMATION TECHNOLOGY ★ DISCORD BOT DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★  FL ★ FULL STACK ★ UCF INFORMATION TECHNOLOGY ★ DISCORD BOT DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★  FL ★ FULL STACK ★&nbsp;
+  </div>
+</div>
+
+<div class="tape"></div>
+
+<div class="layout">
+
+  <!-- LEFT NAV -->
+  <nav class="leftnav">
+    <div class="nav-section">
+      <a href="home.html" class="nav-section-title">Top page</a>
+      <span class="nav-section-sub">トップページ</span>
+    </div>
+    <div class="nav-section">
+      <a href="about.html" class="nav-section-title">About</a>
+      <span class="nav-section-sub">について</span>
+    </div>
+    <div class="nav-section">
+      <a href="projects.html" class="nav-section-title">Projects</a>
+      <span class="nav-section-sub">私の作品</span>
+    </div>
+    <div class="nav-section">
+      <a href="gallery.html" class="nav-section-title active">Gallery</a>
+      <span class="nav-section-sub">写真</span>
+    </div>
+
+    <!-- VISIT COUNTER -->
+    <div class="widget">
+      <span class="widget-label">SITE VISITS</span>
+      <span class="counter-num" id="ctr">000000</span>
+    </div>
+
+    <!-- STATUS -->
+    <div class="widget">
+      <span class="widget-label">STATUS</span>
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:#3D2000;line-height:2.4;letter-spacing:1px;">
+        <span class="online-dot"></span><span style="color:var(--amber);">ONLINE</span><br>
+        <span class="online-dot"></span><span style="color:var(--amber2);">OPEN TO HIRE</span>
+      </div>
+    </div>
+
+    <!-- SOCIAL LINKS -->
+    <div class="widget" style="padding-bottom:8px;">
+      <span class="widget-label">FIND ME</span>
+    </div>
+    <div class="social-wrap">
+      <a href="https://github.com/uxce" target="_blank" rel="noopener" class="social-link">
+        <span class="social-icon si-gh">⬡</span>GITHUB
+      </a>
+    </div>
+
+    <!-- LAST UPDATE -->
+    <div class="last-update">
+      LAST UPDATE<br><span>JUN 2026</span>
+    </div>
+
+  </nav>
+
+  <!-- MAIN -->
+  <main class="maincol">
+
+    <div class="sec-head">
+      <span class="sec-head-en">Gallery</span>
+      <span class="gallery-header-count" id="photoCount">— PHOTOS</span>
+    </div>
+
+    <!-- Photo wall is built from photos.json — do not add items here manually -->
+    <div class="photo-wall" id="photoWall"></div>
+
+  </main>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-close" id="lbClose">✕ CLOSE</div>
+  <img src="" alt="" id="lbImg">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<div class="tape"></div>
+<div class="foot">
+  © 2026 UXCE · UCF INFORMATION TECHNOLOGY ·  FL · <span>NO TRACKING · NO ADS</span>
+</div>
+
+<script src="js/cursor.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/nav-music.js"></script>
+</body>
+</html>

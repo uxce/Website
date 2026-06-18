@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UXCE // Projects</title>
+<meta name="description" content="Projects by Alex H. — UCF IT student.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-trail-wrap"></div>
+
+<!-- TOP BAR -->
+<div class="top-banner">
+  UCF INFORMATION TECHNOLOGY &mdash;  FL &mdash; OPEN FOR WORK
+</div>
+
+
+<div class="stripe"></div>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    ★ UCF INFORMATION TECHNOLOGY ★ DISCORD BOT DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★  FL ★ FULL STACK ★ UCF INFORMATION TECHNOLOGY ★ DISCORD BOT DEVELOPER ★ HACK UCF PARTICIPANT ★ OPEN FOR INTERNSHIP ★  FL ★ FULL STACK ★&nbsp;
+  </div>
+</div>
+
+<div class="tape"></div>
+
+<div class="layout">
+
+  <!-- LEFT NAV -->
+  <nav class="leftnav">
+    <div class="nav-section">
+      <a href="home.html" class="nav-section-title">Top page</a>
+      <span class="nav-section-sub">トップページ</span>
+    </div>
+    <div class="nav-section">
+      <a href="about.html" class="nav-section-title">About</a>
+      <span class="nav-section-sub">について</span>
+    </div>
+    <div class="nav-section">
+      <a href="projects.html" class="nav-section-title active">Projects</a>
+      <span class="nav-section-sub">私の作品</span>
+    </div>
+    <div class="nav-section">
+      <a href="gallery.html" class="nav-section-title">Gallery</a>
+      <span class="nav-section-sub">写真</span>
+    </div>
+
+    <!-- VISIT COUNTER -->
+    <div class="widget">
+      <span class="widget-label">SITE VISITS</span>
+      <span class="counter-num" id="ctr">000000</span>
+    </div>
+
+    <!-- STATUS -->
+    <div class="widget">
+      <span class="widget-label">STATUS</span>
+      <div style="font-family:'Space Mono',monospace;font-size:9px;color:#3D2000;line-height:2.4;letter-spacing:1px;">
+        <span class="online-dot"></span><span style="color:var(--amber);">ONLINE</span><br>
+        <span class="online-dot"></span><span style="color:var(--amber2);">OPEN TO HIRE</span>
+      </div>
+    </div>
+
+    <!-- SOCIAL LINKS -->
+    <div class="widget" style="padding-bottom:8px;">
+      <span class="widget-label">FIND ME</span>
+    </div>
+    <div class="social-wrap">
+      <a href="https://github.com/uxce" target="_blank" rel="noopener" class="social-link">
+        <span class="social-icon si-gh">⬡</span>GITHUB
+      </a>
+      </div>
+
+    <!-- LAST UPDATE -->
+    <div class="last-update">
+      LAST UPDATE<br><span>JUN 2026</span>
+    </div>
+
+  </nav>
+
+  <!-- MAIN -->
+  <main class="maincol">
+
+    <div class="sec-head"><span class="sec-head-en">Projects</span></div>
+
+    <!-- PROJECT GRID — same style as index.html cards, each is also an accordion -->
+    <div class="proj-grid">
+
+      <!-- ── PROJECT 001 ── -->
+      <div class="proj-card pc1 open" id="proj-001" data-code="import discord async def delete() for msg in channel.history() await msg.delete()">
+        <div class="proj-card-face" onclick="toggleProj(this)">
+          <div class="proj-card-overlay">
+            <div class="proj-card-title">DISCORD<br>MSG DELETER</div>
+            <div class="proj-card-tag">PYTHON · DISCORD.PY</div>
+          </div>
+          <div class="proj-card-label">
+            <span class="proj-card-num">// 001</span>
+            <span class="proj-card-name">DISCORD MESSAGE DELETER</span>
+            <span class="proj-card-status shipped">SHIPPED</span>
+            <span class="proj-card-chevron">▼</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-body-inner">
+            <div class="proj-body-content">
+              <div class="proj-body-tags">
+                <span class="proj-tag">PYTHON</span>
+                <span class="proj-tag">DISCORD.PY</span>
+                <span class="proj-tag">EXE</span>
+              </div>
+              <div class="proj-body-desc">
+                <p>Developed a desktop application for bulk deletion of Discord messages across servers and direct messages. 
+                  Implemented asynchronous background processing, automatic rate-limit handling, deletion verification, and progress tracking to
+                   efficiently manage large-scale message cleanup while maintaining application responsiveness.</p>
+              </div>
+              <div class="proj-body-links">
+                <a href="https://github.com/uxce/DiscordMessageHandler" target="_blank" rel="noopener" class="proj-link red">⬡ VIEW ON GITHUB</a>
+              </div>
+            </div>
+            <div class="proj-body-screenshot">    
+              <img src="projects/discord.png" alt="Discord Message Deleter">
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- ── PROJECT 002 ── -->
+      <div class="proj-card pc2" id="proj-002" data-code="git clone hackucf CTF pwn rev web crypto forensics team submit flag">
+        <div class="proj-card-face" onclick="toggleProj(this)">
+          <div class="proj-card-overlay">
+            <div class="proj-card-title">HACK UCF<br>Horse Plinko</div>
+            <div class="proj-card-tag">TEAM EVENT · BLUE TEAM</div>
+          </div>
+          <div class="proj-card-label">
+            <span class="proj-card-num">// 002</span>
+            <span class="proj-card-name">HACK UCF</span>
+            <span class="proj-card-status shipped">COMPETED</span>
+            <span class="proj-card-chevron">▶</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-body-inner">
+            <div class="proj-body-content">
+
+            <div class="proj-body-tags">
+              <span class="proj-tag">BLUE TEAM</span>
+              <span class="proj-tag">CYBERSEC</span>
+              <span class="proj-tag">TEAM EVENT</span>
+              <span class="proj-tag">PWN</span>
+              <span class="proj-tag">WEB</span>
+            </div>
+            <div class="proj-body-desc">
+              <p>HackUCF's Horse Plinko Blue Team competition, where teams defended enterprise systems against simulated attacks while maintaining service uptime.
+                 Responsible for securing two Windows Server VMs, with a focus on FTP and RDP services.</p>
+              <p>Performed system hardening, account audits, service monitoring, and incident response during the competition.
+                 Worked with teammates to identify vulnerabilities, investigate suspicious activity, and apply defensive measures.</p>
+              
+             <p>Placed <span class="r">4th out of 55 teams.</span></p>
+            </div>
+            <div class="proj-body-links">
+              <a href="https://plinko.horse/" target="_blank" rel="noopener" class="proj-link">↗ HPCC.ORG</a>
+            </div>
+            </div>
+            <div class="proj-body-screenshot">
+              <img src="projects/hpcc3group.jpg" alt="">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- ── PROJECT 003 ── -->
+      <div class="proj-card pc3" id="proj-003" data-code="coming soon in development building...">
+        <div class="proj-card-face" onclick="toggleProj(this)">
+          <div class="proj-card-overlay">
+            <div class="proj-card-title">COMING<br>SOON</div>
+            <div class="proj-card-tag">IN DEVELOPMENT</div>
+          </div>
+          <div class="proj-card-label">
+            <span class="proj-card-num">// 003</span>
+            <span class="proj-card-name">In Progress</span>
+            <span class="proj-card-status">WIP</span>
+            <span class="proj-card-chevron">▶</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-body-inner">
+            <div class="proj-body-content">
+
+            <div class="proj-body-tags">
+              <span class="proj-tag">WIP</span>
+            </div>
+            <div class="proj-body-desc">
+              <p>.</p>
+              <p>.</p>
+            </div>
+            <div class="proj-body-links">
+              <a href="#" class="proj-link">⬡ GITHUB</a>
+            </div>
+            </div>
+            <div class="proj-body-screenshot">
+              <!-- ADD A SCREENSHOT: <img src="assets/images/proj.png" alt=""> -->
+              <div class="proj-screenshot-placeholder">
+                <span>[ SCREENSHOT ]</span>
+                <span>add img src</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <!-- ── PROJECT 004 ── 
+      <div class="proj-card pc4" id="proj-004" data-code="SELECT * FROM projects WHERE shipped = true ORDER BY date DESC">
+        <div class="proj-card-face" onclick="toggleProj(this)">
+          <div class="proj-card-overlay">
+            <div class="proj-card-title">COMING<br>SOON</div>
+            <div class="proj-card-tag">IN DEVELOPMENT</div>
+          </div>
+          <div class="proj-card-label">
+            <span class="proj-card-num">// 004</span>
+            <span class="proj-card-name">In Progress</span>
+            <span class="proj-card-status">WIP</span>
+            <span class="proj-card-chevron">▶</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-body-inner">
+            <div class="proj-body-content">
+
+            <div class="proj-body-tags">
+              <span class="proj-tag">WIP</span>
+            </div>
+            <div class="proj-body-desc">
+              <p>.</p>
+            </div>
+            <div class="proj-body-links">
+              <a href="#" class="proj-link">⬡ GITHUB</a>
+            </div>
+            </div>
+            <div class="proj-body-screenshot">
+              <!-- ADD A SCREENSHOT: <img src="assets/images/proj.png" alt="">
+              <div class="proj-screenshot-placeholder">
+                <span>[ SCREENSHOT ]</span>
+                <span>add img src</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          -->
+      <!-- ── PROJECT 005 ── 
+      <div class="proj-card pc5" id="proj-005" data-code="nmap -sV -O target ssh brute force recon enumeration">
+        <div class="proj-card-face" onclick="toggleProj(this)">
+          <div class="proj-card-overlay">
+            <div class="proj-card-title">COMING<br>SOON</div>
+            <div class="proj-card-tag">IN DEVELOPMENT</div>
+          </div>
+          <div class="proj-card-label">
+            <span class="proj-card-num">// 005</span>
+            <span class="proj-card-name">In Progress</span>
+            <span class="proj-card-status">WIP</span>
+            <span class="proj-card-chevron">▶</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-body-inner">
+            <div class="proj-body-content">
+
+            <div class="proj-body-tags">
+              <span class="proj-tag">YOUR STACK</span>
+            </div>
+            <div class="proj-body-desc">
+              <p>Add your project description here.</p>
+            </div>
+            <div class="proj-body-links">
+              <a href="#" class="proj-link">⬡ GITHUB</a>
+            </div>
+            </div>
+            <div class="proj-body-screenshot">
+              <div class="proj-screenshot-placeholder">
+                <span>[ SCREENSHOT ]</span>
+                <span>add img src</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            -->
+      <!-- ── PROJECT 006 ── 
+     <div class="proj-card pc6" id="proj-006" data-code="npm run build webpack bundle deploy vercel prod ready">
+        <div class="proj-card-face" onclick="toggleProj(this)">
+          <div class="proj-card-overlay">
+            <div class="proj-card-title">COMING<br>SOON</div>
+            <div class="proj-card-tag">IN DEVELOPMENT</div>
+          </div>
+          <div class="proj-card-label">
+            <span class="proj-card-num">// 006</span>
+            <span class="proj-card-name">In Progress</span>
+            <span class="proj-card-status">WIP</span>
+            <span class="proj-card-chevron">▶</span>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-body-inner">
+            <div class="proj-body-content">
+              <div class="proj-body-tags">
+                <span class="proj-tag">YOUR STACK</span>
+              </div>
+              <div class="proj-body-desc">
+                <p>Add your project description here.</p>
+              </div>
+              <div class="proj-body-links">
+                <a href="#" class="proj-link">⬡ GITHUB</a>
+              </div>
+            </div>
+            <div class="proj-body-screenshot">
+              <div class="proj-screenshot-placeholder">
+                <span>[ SCREENSHOT ]</span>
+                <span>add img src</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      -->
+
+    </div><!-- /proj-grid -->
+
+  </main>
+</div>
+
+<div class="tape"></div>
+<div class="foot">
+  © 2026 UXCE · UCF INFORMATION TECHNOLOGY ·  FL · <span>NO TRACKING · NO ADS</span>
+</div>
+
+<script src="js/cursor.js"></script>
+<script src="js/counter.js"></script>
+<script>
+function toggleProj(face) {
+  const card = face.closest('.proj-card');
+  const wasOpen = card.classList.contains('open');
+  card.classList.toggle('open', !wasOpen);
+  const chevron = card.querySelector('.proj-card-chevron');
+  if (chevron) chevron.textContent = card.classList.contains('open') ? '▼' : '▶';
+}
+
+// On page load: open card if URL has hash
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = location.hash;
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target && target.classList.contains('proj-card')) {
+      target.classList.add('open');
+      const chevron = target.querySelector('.proj-card-chevron');
+      if (chevron) chevron.textContent = '▼';
+      setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  }
+});
+</script>
+<script src="js/nav-music.js"></script>
+</body>
+</html>

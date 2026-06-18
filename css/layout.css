@@ -1,0 +1,100 @@
+/* ════════════════════════════════════════
+   layout.css — page structure & regions
+════════════════════════════════════════ */
+
+/* ── TOP BANNER ── */
+.top-banner {
+  width: 100%;
+  background: #000;
+  border-bottom: 1px solid #1A0E00;
+  padding: 4px 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #5A3800;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* ── STRIPE ── */
+.stripe {
+  height: 5px;
+  background: linear-gradient(90deg, #1A0900, #E8850A 20%, #F5A623 50%, #E8850A 80%, #1A0900);
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  background: #040300;
+  border-bottom: 1px solid #1A0E00;
+  overflow: hidden;
+  padding: 4px 0;
+}
+.marquee-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marq 32s linear infinite;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  color: #3D2000;
+  letter-spacing: 4px;
+}
+
+/* ── TAPE ── */
+.tape {
+  height: 8px;
+  background: repeating-linear-gradient(-45deg, #1A0E00 0 6px, #060503 6px 12px);
+}
+
+/* ── MAIN LAYOUT ── */
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 600px;
+}
+
+/* ── LEFT NAV ── */
+.leftnav {
+  width: 200px;
+  min-width: 200px;
+  background: #000;
+  border-right: 1px solid #1A0E00;
+  flex-shrink: 0;
+  position: relative;
+}
+.leftnav::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, #E8850A 30%, #E8850A 70%, transparent);
+  pointer-events: none;
+  animation: leftnav-edge-breathe 5.5s ease-in-out infinite;
+}
+
+@keyframes leftnav-edge-breathe {
+  0%   { opacity: 0.06; }
+  8%   { opacity: 0.32; filter: drop-shadow(0 0 4px rgba(232,133,10,0.5)); }
+  18%  { opacity: 0.12; filter: none; }
+  28%  { opacity: 0.26; filter: drop-shadow(0 0 4px rgba(232,133,10,0.4)); }
+  40%  { opacity: 0.06; filter: none; }
+  100% { opacity: 0.06; filter: none; }
+}
+
+/* ── MAIN COLUMN ── */
+.maincol {
+  flex: 1;
+  min-width: 0;
+  background: #060503;
+}
+
+/* ── FOOTER ── */
+.foot {
+  background: #000;
+  border-top: 1px solid #1A0E00;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: #2A1800;
+  letter-spacing: 3px;
+}
+.foot span { color: #3D2000; }
