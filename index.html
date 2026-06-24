@@ -14,7 +14,6 @@
     overflow: hidden;
   }
 
-  /* The iframe fills the entire viewport */
   #pageFrame {
     width: 100%;
     height: 100%;
@@ -25,7 +24,7 @@
 </head>
 <body>
 
-<!-- Hidden persistent audio — never destroyed on navigation -->
+<!-- Hidden persistent audio-->
 <audio id="shellAudio" preload="auto"></audio>
 
 <!-- The entire visible site lives inside this iframe -->
@@ -36,7 +35,7 @@
   const audio = document.getElementById('shellAudio');
   const frame = document.getElementById('pageFrame');
 
-  /* ── PLAYLIST (mirrors player.js) ── */
+  /* ── playlist ── */
   const playlist = [
     { title: 'Cartz',    artist: 'gum.mp3',     src: 'https://pub-f3421bbecaba465e83e033376eb8cdb2.r2.dev/music/cartz.mp3',    duration: '2:50' },
     { title: 'Till Dawn', artist: 'Janaway',     src: 'https://pub-f3421bbecaba465e83e033376eb8cdb2.r2.dev/music/TillDawn.mp3', duration: '5:22' },
@@ -49,7 +48,7 @@
   let looping = false;
   let playing = false;
 
-  /* ── LOAD + PLAY ── */
+  /* ── load + play ── */
   function loadTrack(idx, autoplay) {
     curIdx = ((idx % playlist.length) + playlist.length) % playlist.length;
     const t = playlist[curIdx];
@@ -68,7 +67,7 @@
 
   audio.addEventListener('timeupdate', broadcastState);
 
-  /* ── BROADCAST STATE TO IFRAME ── */
+  /* ── broadcast to iframe ── */
   function broadcastState() {
     if (!frame.contentWindow) return;
     const t = playlist[curIdx];
@@ -86,7 +85,7 @@
     }, '*');
   }
 
-  /* ── HANDLE COMMANDS FROM IFRAME ── */
+  /* ── iframe handler ── */
   window.addEventListener('message', e => {
     const d = e.data;
     if (!d || !d.type) return;
@@ -140,7 +139,7 @@
     }
   });
 
-  /* ── Start muted, play on first click ── */
+
   audio.volume = 0.1;
   loadTrack(0, true);
 
