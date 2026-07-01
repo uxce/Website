@@ -95,7 +95,7 @@
     <!-- PROJECT GRID — same style as index.html cards, each is also an accordion -->
     <div class="proj-grid">
 
-      <!-- ── PROJECT 001 ── -->
+<!-- ── PROJECT 001 ── -->
       <div class="proj-card pc1 open" id="proj-001" data-code="import discord async def delete() for msg in channel.history() await msg.delete()">
         <div class="proj-card-face" onclick="toggleProj(this)">
           <div class="proj-card-overlay">
@@ -126,11 +126,16 @@
                 <a href="https://github.com/uxce/DiscordMessageHandler" target="_blank" rel="noopener" class="proj-link red">⬡ VIEW ON GITHUB</a>
               </div>
             </div>
-            <div class="proj-body-screenshot">    
-              <img src="projects/discord.png" alt="Discord Message Deleter">
+            <div class="proj-body-screenshot">
+              <div class="pss-track">
+                <img src="projects/discMessage/discord.png" alt="Discord Message Deleter">
+                <img src="projects/discMessage/example1.png" alt="Discord Message Deleter">
+                <img src="projects/discMessage/example2.png" alt="Discord Message Deleter">
+
               </div>
             </div>
           </div>
+        </div>
       </div>
 
       <!-- ── PROJECT 002 ── -->
@@ -171,8 +176,8 @@
             </div>
             </div>
             <div class="proj-body-screenshot">
-              <img src="projects/hpcc3group.jpg" alt="">
-
+                <div class="pss-track">
+                  <img src="projects/hpcc3/hpcc3group.jpg" alt="">
               </div>
             </div>
           </div>
@@ -217,122 +222,6 @@
           </div>
         </div>
       </div>
-   
-      <!-- ── PROJECT 004 ── 
-      <div class="proj-card pc4" id="proj-004" data-code="SELECT * FROM projects WHERE shipped = true ORDER BY date DESC">
-        <div class="proj-card-face" onclick="toggleProj(this)">
-          <div class="proj-card-overlay">
-            <div class="proj-card-title">COMING<br>SOON</div>
-            <div class="proj-card-tag">IN DEVELOPMENT</div>
-          </div>
-          <div class="proj-card-label">
-            <span class="proj-card-num">// 004</span>
-            <span class="proj-card-name">In Progress</span>
-            <span class="proj-card-status">WIP</span>
-            <span class="proj-card-chevron">▶</span>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-body-inner">
-            <div class="proj-body-content">
-
-            <div class="proj-body-tags">
-              <span class="proj-tag">WIP</span>
-            </div>
-            <div class="proj-body-desc">
-              <p>.</p>
-            </div>
-            <div class="proj-body-links">
-              <a href="#" class="proj-link">⬡ GITHUB</a>
-            </div>
-            </div>
-            <div class="proj-body-screenshot">
-              <!-- ADD A SCREENSHOT: <img src="assets/images/proj.png" alt="">
-              <div class="proj-screenshot-placeholder">
-                <span>[ SCREENSHOT ]</span>
-                <span>add img src</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-          -->
-      <!-- ── PROJECT 005 ── 
-      <div class="proj-card pc5" id="proj-005" data-code="nmap -sV -O target ssh brute force recon enumeration">
-        <div class="proj-card-face" onclick="toggleProj(this)">
-          <div class="proj-card-overlay">
-            <div class="proj-card-title">COMING<br>SOON</div>
-            <div class="proj-card-tag">IN DEVELOPMENT</div>
-          </div>
-          <div class="proj-card-label">
-            <span class="proj-card-num">// 005</span>
-            <span class="proj-card-name">In Progress</span>
-            <span class="proj-card-status">WIP</span>
-            <span class="proj-card-chevron">▶</span>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-body-inner">
-            <div class="proj-body-content">
-
-            <div class="proj-body-tags">
-              <span class="proj-tag">YOUR STACK</span>
-            </div>
-            <div class="proj-body-desc">
-              <p>Add your project description here.</p>
-            </div>
-            <div class="proj-body-links">
-              <a href="#" class="proj-link">⬡ GITHUB</a>
-            </div>
-            </div>
-            <div class="proj-body-screenshot">
-              <div class="proj-screenshot-placeholder">
-                <span>[ SCREENSHOT ]</span>
-                <span>add img src</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-            -->
-      <!-- ── PROJECT 006 ── 
-     <div class="proj-card pc6" id="proj-006" data-code="npm run build webpack bundle deploy vercel prod ready">
-        <div class="proj-card-face" onclick="toggleProj(this)">
-          <div class="proj-card-overlay">
-            <div class="proj-card-title">COMING<br>SOON</div>
-            <div class="proj-card-tag">IN DEVELOPMENT</div>
-          </div>
-          <div class="proj-card-label">
-            <span class="proj-card-num">// 006</span>
-            <span class="proj-card-name">In Progress</span>
-            <span class="proj-card-status">WIP</span>
-            <span class="proj-card-chevron">▶</span>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-body-inner">
-            <div class="proj-body-content">
-              <div class="proj-body-tags">
-                <span class="proj-tag">YOUR STACK</span>
-              </div>
-              <div class="proj-body-desc">
-                <p>Add your project description here.</p>
-              </div>
-              <div class="proj-body-links">
-                <a href="#" class="proj-link">⬡ GITHUB</a>
-              </div>
-            </div>
-            <div class="proj-body-screenshot">
-              <div class="proj-screenshot-placeholder">
-                <span>[ SCREENSHOT ]</span>
-                <span>add img src</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
-
     </div><!-- /proj-grid -->
 
   </main>
@@ -343,9 +232,21 @@
   © 2026 UXCE · UCF INFORMATION TECHNOLOGY ·  FL · <span>NO TRACKING · NO ADS</span>
 </div>
 
+<!--Light box-->
+
+<div class="proj-lightbox" id="projLightbox">
+  <div class="pl-close" id="plClose">✕ CLOSE</div>
+  <div class="pl-prev" id="plPrev">◀</div>
+  <img src="" alt="" id="plImg">
+  <div class="pl-next" id="plNext">▶</div>
+  <div class="pl-caption" id="plCaption"></div>
+</div>
+
+
 <script src="js/cursor.js"></script>
 <script src="js/counter.js"></script>
 <script>
+
 function toggleProj(face) {
   const card = face.closest('.proj-card');
   const wasOpen = card.classList.contains('open');
@@ -369,5 +270,6 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <script src="js/nav-music.js"></script>
+<script src="js/project_media.js"></script>
 </body>
 </html>
