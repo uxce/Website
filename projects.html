@@ -182,18 +182,19 @@
             </div>
           </div>
         </div>
+      </div>
 
       <!-- ── PROJECT 003 ── -->
-      <div class="proj-card pc3" id="proj-003" data-code="coming soon in development building...">
+      <div class="proj-card pc3" id="proj-003" data-code="Solo Security Test">
         <div class="proj-card-face" onclick="toggleProj(this)">
           <div class="proj-card-overlay">
-            <div class="proj-card-title">COMING<br>SOON</div>
-            <div class="proj-card-tag">IN DEVELOPMENT</div>
+            <div class="proj-card-title">INBIOME<br>PEN TEST</div>
+            <div class="proj-card-tag">RED TEAM · SOLO </div>
           </div>
           <div class="proj-card-label">
             <span class="proj-card-num">// 003</span>
-            <span class="proj-card-name">In Progress</span>
-            <span class="proj-card-status">WIP</span>
+            <span class="proj-card-name">INBIOME</span>
+            <span class="proj-card-status">DISCLOSED</span>
             <span class="proj-card-chevron">▶</span>
           </div>
         </div>
@@ -202,21 +203,45 @@
             <div class="proj-body-content">
 
             <div class="proj-body-tags">
-              <span class="proj-tag">WIP</span>
+              <span class="proj-tag">RED TEAM</span>
+              <span class="proj-tag">CYBER SEC</span>
+              <span class="proj-tag">HUNTING</span>
             </div>
             <div class="proj-body-desc">
-              <p>.</p>
-              <p>.</p>
+              <p><span class="r"> inBiome </span>is a Dutch medical research company developing a diagnostic platform called Antoni, which analyses bacterial infections
+                 from patient samples within a few hours. Their platform consists of a Flutter-based web app, two FastAPI
+                 backends, and a WordPress site. </p>
+              
+              <p>During reconnaissance I extracted the Flutter JavaScript bundle from the Antoni web app at <span class="r">antoni-research.inbiome.com.</span>
+                 Deobfuscating <span class="r">main.dart.js </span> revealed a list of internal API endpoints that weren't publicly documented including one
+                  that caught my attention immediately:<span class="r"> GET /v1/lab_flow_web/organizations </span> I sent an unauthenticated request to both API backends.<br><br>
+                
+                <span class="r">curl -s https://lf-research-api.inbiome.com/v1/lab_flow_web/organizations</span><br>
+                <span class="r">curl -s https://fa-research-api.inbiome.com/v1/users/organizations</span><br><br></p>
+              
+              <p>Both returned <span class="r">full JSON responses</span> without requiring any authentication exposing a list of <span class="r">client organization names.</span>
+                These were real hospital and research institution names the kind of client relationships a medical device company would reasonably want
+                to keep confidential.</p>
+              
+              <p>The issue was a <span class="r">missing authentication</span> check on two endpoints that the OpenAPI spec declared as protected. The spec said
+                  <span class="r">OAuth2PasswordBearer</span> was required, but the actual server never enforced it.</p>
+            
+              <p>After disclosing the information <span class="r">inBiome</span> acknowledged the finding and patched both endpoints within the same reporting cycle.
+                 Subsequent testing confirmed the endpoints now correctly  <span class="r">return 401</span> for unauthenticated requests.</p>
+
             </div>
             <div class="proj-body-links">
-              <a href="#" class="proj-link">⬡ GITHUB</a>
+              <a href="https://inbiome.com/" class="proj-link">⬡ INBIOME</a>
             </div>
             </div>
             <div class="proj-body-screenshot">
-              <!-- ADD A SCREENSHOT: <img src="assets/images/proj.png" alt=""> -->
-              <div class="proj-screenshot-placeholder">
-                <span>[ SCREENSHOT ]</span>
-                <span>add img src</span>
+              <div class="pss-track">
+                <img src="projects/inbiome/frontpage_cleaned.png" alt="Antoni frontpage">
+                <img src="projects/inbiome/burp_cleaned.png" alt="Burp1">
+                <img src="projects/inbiome/burp2_cleaned.png" alt="Burp2">
+                <img src="projects/inbiome/burp3_cleaned.png" alt="Burp3">
+                <img src="projects/inbiome/burp4_cleaned.png" alt="Burp4">
+                <img src="projects/inbiome/burp5_cleaned.png" alt="Burp5">
               </div>
             </div>
           </div>
@@ -229,7 +254,7 @@
 
 <div class="tape"></div>
 <div class="foot">
-  © 2026 UXCE · UCF INFORMATION TECHNOLOGY ·  FL · <span>NO TRACKING · NO ADS</span>
+  © 2026 UXCE · UCF INFORMATION TECHNOLOGY
 </div>
 
 <!--Light box-->
