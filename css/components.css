@@ -253,7 +253,7 @@
   overflow: hidden;
 }
 .hero-photo::before {
-  content: '// UCF · IT · S-CLASS · 2027';
+  content: '';
   position: absolute;
   right: 24px; bottom: 14px;
   font-family: 'Bebas Neue', sans-serif;
